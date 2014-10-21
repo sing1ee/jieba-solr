@@ -8,7 +8,7 @@ jieba-analysis adapter for solr
 ###DEMO
 ```xml
 
-<fieldType name="text_ik" class="solr.TextField" positionIncrementGap="100">
+<fieldType name="text_jieba" class="solr.TextField" positionIncrementGap="100">
   <analyzer type="index">
     <tokenizer class="jieba.solr.JiebaTokenizerFactory"  segMode="SEARCH"/>
     <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
