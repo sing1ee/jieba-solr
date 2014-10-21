@@ -20,13 +20,9 @@ public class JiebaTokenizer extends Tokenizer {
 	// Jieba分词器实现
 	private JiebaSegmenter jiebaTagger;
 
-	// 词元文本属性
 	private final CharTermAttribute termAtt;
-	// 词元位移属性
 	private final OffsetAttribute offsetAtt;
-	// 词元分类属性（该属性分类参考org.wltea.analyzer.core.Lexeme中的分类常量）
 	private final TypeAttribute typeAtt;
-	// 记录最后一个词元的结束位置
 	private int endPosition;
 	// Jieba SegMode: INDEX or SEARCH
 	private final SegMode segMode;
@@ -65,22 +61,14 @@ public class JiebaTokenizer extends Tokenizer {
 	public boolean incrementToken() throws IOException {
 		clearAttributes();
 		if(tokens.hasNext()){
-			//将Lexeme转成Attributes
 			SegToken token = tokens.next();
-			//设置词元文本
 			termAtt.append(token.word.getToken());
-			//设置词元长度
 			termAtt.setLength(token.word.length());
-			//设置词元位移
 			offsetAtt.setOffset(token.startOffset, token.endOffset);
-			//记录分词的最后位置
 			endPosition = token.endOffset;
-			//记录词元分类
 			typeAtt.setType(token.word.getTokenType());			
-			//返会true告知还有下个词元
 			return true;
 		}
-		//返会false告知词元输出完毕
 		return false;
 	}
 
