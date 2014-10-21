@@ -53,7 +53,7 @@ public class JiebaTokenizer extends Tokenizer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    List<SegToken> list = jiebaTagger.process(bdr.toString(), segMode);
+	    List<SegToken> list = jiebaTagger.process(bdr.toString().trim(), segMode);
 	    tokens = list.iterator();
 	}
 
