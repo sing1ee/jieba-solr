@@ -4,8 +4,11 @@
 package jieba.solr;
 
 import java.io.Reader;
+import java.io.StringReader;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
 import com.huaban.analysis.jieba.JiebaSegmenter.SegMode;
 
@@ -39,5 +42,4 @@ public class JiebaAnalyzer extends Analyzer {
 	protected TokenStreamComponents createComponents(String arg0, Reader in) {
 		return new TokenStreamComponents(new JiebaTokenizer(in, this.segMode));
 	}
-
 }

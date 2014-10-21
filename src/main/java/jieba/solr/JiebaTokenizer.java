@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -11,8 +12,8 @@ import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.analysis.tokenattributes.TypeAttribute;
 
 import com.huaban.analysis.jieba.JiebaSegmenter;
-import com.huaban.analysis.jieba.SegToken;
 import com.huaban.analysis.jieba.JiebaSegmenter.SegMode;
+import com.huaban.analysis.jieba.SegToken;
 
 public class JiebaTokenizer extends Tokenizer {
 
@@ -56,16 +57,16 @@ public class JiebaTokenizer extends Tokenizer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    
-	    tokens = jiebaTagger.process(bdr.toString(), segMode).iterator();
+	    List<SegToken> list = jiebaTagger.process(bdr.toString(), segMode);
+	    tokens = list.iterator();
 	}
 
 	@Override
 	public boolean incrementToken() throws IOException {
 		clearAttributes();
-		SegToken token = tokens.next();
-		if(token != null){
+		if(tokens.hasNext()){
 			//将Lexeme转成Attributes
+			SegToken token = tokens.next();
 			//设置词元文本
 			termAtt.append(token.word.getToken());
 			//设置词元长度
