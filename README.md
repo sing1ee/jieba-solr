@@ -30,4 +30,5 @@ Lucene 4.9.0
 
 ```
 
-
+###Thanks
+[结巴分词](https://github.com/fxsjy/jieba) 非常给力，感谢@fxsjy 给我们带来了如此给力的工具。
