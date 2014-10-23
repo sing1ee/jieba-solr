@@ -57,6 +57,6 @@ public class JiebaTokenizer extends Tokenizer {
 	@Override
 	public void reset() throws IOException {
 		super.reset();
-		jieba.reset();
+		jieba.reset(this.input);
 	}
 }
