@@ -25,6 +25,7 @@ public class JiebaTokenizerFactory extends TokenizerFactory {
 
 	@Override
 	public Tokenizer create(AttributeFactory arg0, Reader in) {
+		System.out.println("create tokenzier");
 		return new JiebaTokenizer(in, segMode);
 	}
 
