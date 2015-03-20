@@ -25,7 +25,7 @@
         compile("org.apache.lucene:lucene-core:4.9.0")
         compile("org.apache.lucene:lucene-queryparser:4.9.0")
         compile("org.apache.lucene:lucene-analyzers-common:4.9.0")
-        compile("'com.huaban:jieba-analysis:1.0.0'")
+        compile('com.huaban:jieba-analysis:1.0.0')
         compile("org.fnlp:fnlp-core:2.0-SNAPSHOT")
         compile("edu.stanford.nlp:edu.stanford.nlp:3.4.1")
     }
