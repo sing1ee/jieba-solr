@@ -39,14 +39,16 @@ public class StanfordAdapter implements Iterator<String> {
 		segmenter.loadClassifierNoExceptions(modelDir + "/ctb.gz", props);
 	}
 
-	public synchronized static StanfordAdapter getInstance(Reader input, String modelDir) {
+	public static StanfordAdapter getInstance(Reader input, String modelDir) {
 		if (null == adapter) {
 			adapter = new StanfordAdapter(input, modelDir);
 		}
+		System.out.println("init adapter in" + Thread.currentThread().getName());
 		return adapter;
 	}
 	
-	public synchronized void reset(Reader input) {
+	public void reset(Reader input) {
+		System.out.println("reset in" + Thread.currentThread().getName());
 		String raw = null;
 		try {
 			StringBuilder bdr = new StringBuilder();

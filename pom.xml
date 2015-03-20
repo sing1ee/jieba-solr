@@ -7,7 +7,28 @@
 	<name>Solr结巴中文分词</name>
 	<description>Solr结巴中文分词，适配Solr接口。</description>
 
+	<repositories>
+		<repository>
+			<id>mvn-repo</id>
+			<url>http://maven.ansj.org/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
+		<dependency>
+			<groupId>org.ansj</groupId>
+			<artifactId>ansj_seg</artifactId>
+			<version>1.4</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/ansj_seg-1.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.ansj</groupId>
+			<artifactId>tree_split</artifactId>
+			<version>1.4</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/tree_split-1.4.jar</systemPath>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>

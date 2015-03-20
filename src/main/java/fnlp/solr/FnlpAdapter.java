@@ -40,14 +40,14 @@ public class FnlpAdapter implements Iterator<String> {
 		}
 	}
 
-	public synchronized static FnlpAdapter getInstance(Reader input, String modelDir, boolean useStop) {
+	public static FnlpAdapter getInstance(Reader input, String modelDir, boolean useStop) {
 		if (null == adapter) {
 			adapter = new FnlpAdapter(input, modelDir, useStop);
 		}
 		return adapter;
 	}
 	
-	public synchronized void reset(Reader input) {
+	public void reset(Reader input) {
 		String raw = null;
 		try {
 			StringBuilder bdr = new StringBuilder();
