@@ -5,13 +5,13 @@ jieba-solr
 jieba-analysis adapter for solr
 
 
-###Require
+### Require
 Lucene 4.9.0
 
 
-###DEMO
+### DEMO
 
-####结巴分词
+#### 结巴分词
 
 ```xml
 
@@ -54,7 +54,7 @@ Lucene 4.9.0
 
 ```
 
-####复旦中文分词
+#### 复旦中文分词
 
 ```xml
 
@@ -76,9 +76,9 @@ Lucene 4.9.0
 
 ```
 
-###Thanks
+### Thanks
 [结巴分词](https://github.com/fxsjy/jieba) 非常给力，感谢@fxsjy 给我们带来了如此给力的工具。
 
 
-###NOTE
+### NOTE
 如果你使用的是Solr5， 新的适配版本在: [analyzer-solr](https://github.com/sing1ee/analyzer-solr)
